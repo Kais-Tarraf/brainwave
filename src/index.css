@@ -12,6 +12,7 @@ html {
     --font-sora: "Sora", sans-serif;
     --font-code-raw: "Source Code Pro", monospace;
     --font-grotesk-raw: "Space Grotesk", sans-serif;
+    color-scheme: dark;
 }
 
 @theme {
