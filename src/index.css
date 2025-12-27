@@ -16,28 +16,28 @@ html {
 }
 
 @theme {
-    --color-primary: #AC6AFF;
+    --color-primary: #ac6aff;
     --color-secondary: #FFC876;
     --color-danger: #FF776F;
     --color-success: #7ADB78;
     --color-info: #858DFF;
     --color-pink: #FF98E2;
 
-    --stroke-default: #26242C;
+    --color-stroke-default: #26242C;
 
-    --neutral-1: #FFFFFF;
-    --neutral-2: #CAC6DD;
-    --neutral-3: #ADA8C3;
-    --neutral-4: #757185;
-    --neutral-5: #3F3A52;
-    --neutral-6: #252134;
-    --neutral-7: #15131D;
-    --neutral-8: #0E0C15;
-    --neutral-9: #474060;
-    --neutral-10: #43435C;
-    --neutral-11: #1B1B2E;
-    --neutral-12: #2E2A41;
-    --neutral-13: #6C7275;
+    --color-n-1: #FFFFFF;
+    --color-n-2: #CAC6DD;
+    --color-n-3: #ADA8C3;
+    --color-n-4: #757185;
+    --color-n-5: #3F3A52;
+    --color-n-6: #252134;
+    --color-n-7: #15131D;
+    --color-n-8: #0E0C15;
+    --color-n-9: #474060;
+    --color-n-10: #43435C;
+    --color-n-11: #1B1B2E;
+    --color-n-12: #2E2A41;
+    --color-n-13: #6C7275;
 
     --font-sans: var(--font-sora), ui-sans-serif, system-ui;
     --font-code: var(--font-code-raw);
@@ -75,7 +75,7 @@ html {
 
 @layer base {
     body {
-        @apply font-sans bg-(--neutral-8) text-(--neutral-1) text-base;
+        @apply font-sans bg-(--n-8) text-(--n-1) text-base;
     }
 
     h1 {
