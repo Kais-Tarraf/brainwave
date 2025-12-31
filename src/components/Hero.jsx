@@ -1,7 +1,14 @@
 import { curve, heroBackground, robot } from "../assets";
 import Section from "./Section";
 import Button from "./Button";
+import { BackgroundCircles, BottomLine, Gradient } from "./design/Hero";
+import { heroIcons } from "../constants";
+import { ScrollParallax } from "react-just-parallax";
+import { useRef } from "react";
+import Generating from "./Generating";
+import Notificiton from "./Notificiton";
 const Hero = () => {
+	const parallaxRef = useRef(null);
 	return (
 		<Section
 			className="pt-48 -mt-21"
@@ -10,7 +17,7 @@ const Hero = () => {
 			customPaddings
 			id="hero"
 		>
-			<div className="container relative">
+			<div className="container relative" ref={parallaxRef}>
 				<div
 					className="relative z-1 max-w-248 mx-auto text-center
                  mb-16 md:mb-20 lg:mb-16"
@@ -53,8 +60,35 @@ const Hero = () => {
 									height={490}
 									alt="AI"
 								/>
+								<Generating
+									className="absolute left-4 right-4
+								bottom-5 md:left-1/2 md:right-auto 
+								md:bottom-8 md:w-124 md:-translate-x-1/2"
+								/>
+								<ScrollParallax isAbsolutelyPositioned>
+									<ul
+										className="hidden absolute 
+									-left-22 bottom-30 px-1 py-1 
+									bg-n-9/40 backdrop-blur border 
+									border-n-1/10 rounded-2xl xl:flex"
+									>
+										{heroIcons.map((icon, index) => (
+											<li className="p-5" key={index}>
+												<img src={icon} alt={icon} width={24} height={25} />
+											</li>
+										))}
+									</ul>
+								</ScrollParallax>
+								<ScrollParallax isAbsolutelyPositioned>
+									<Notificiton
+										className="hidden absolute 
+									-right-22 bottom-44 w-[18rem] xl:flex"
+										title="Code Generation"
+									/>
+								</ScrollParallax>
 							</div>
 						</div>
+						<Gradient />
 					</div>
 					<div className="absolute -top-[54%] left-1/2 w-[234%] -translate-x-1/2 md:-top-[46%] md:w-[138%] lg:-top-[104%]">
 						<img
@@ -65,8 +99,10 @@ const Hero = () => {
 							alt="hero"
 						/>
 					</div>
+					<BackgroundCircles />
 				</div>
 			</div>
+			<BottomLine />
 		</Section>
 	);
 };
