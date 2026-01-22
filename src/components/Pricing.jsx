@@ -1,7 +1,9 @@
 import React from "react";
 import Section from "./Section";
 import { smallSphere, stars } from "../assets";
-
+import Heading from "./Heading";
+import PricingList from "./PricingList";
+import { LeftLine, RightLine } from "../components/design/Pricing";
 const Pricing = () => {
 	return (
 		<Section className="overflow-hidden" id="pricing">
@@ -26,6 +28,15 @@ const Pricing = () => {
 							alt="stars"
 						/>
 					</div>
+				</div>
+				<Heading
+					tag="Get Started with Brainwave"
+					title="Pay once, use forever"
+				/>
+				<div className="relative">
+					<PricingList />
+					<LeftLine />
+					<RightLine />
 				</div>
 			</div>
 		</Section>
