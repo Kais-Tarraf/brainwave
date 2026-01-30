@@ -22,8 +22,8 @@ const Roadmap = () => {
 									item.colorful ? "bg-conic" : "bg-n-6"
 								}`}
 							>
-								<div>
-									<div>
+								<div className="relative p-8 bg-n-8 rounded-4xl overflow-hidden xl:p-15 ">
+									<div className="absolute top-0 left-0 max-w-full">
 										<img
 											src={grid}
 											alt="grid"
@@ -33,9 +33,9 @@ const Roadmap = () => {
 										/>
 									</div>
 									<div className="relative z-1">
-										<div className="flex ietms-center justify-between">
+										<div className="flex ietms-center justify-between max-w-108 mb-8 md:mb-20">
 											<Tagline>{item.date}</Tagline>
-											<div>
+											<div className="flex items-center px-4 py-1 bg-n-1 rounded text-n-8">
 												<img
 													src={item.status === "done" ? check2 : loading1}
 													alt={status}
@@ -45,7 +45,8 @@ const Roadmap = () => {
 												/>
 												<div className="tagline">{status}</div>
 											</div>
-											<div className="mb-10">
+											</div>
+											<div className="mb-10 -my-10 -mx-15">
 												<img
 													src={item.imageUrl}
 													className="w-full"
@@ -59,7 +60,7 @@ const Roadmap = () => {
 										</div>
 									</div>
 								</div>
-							</div>
+							
 						);
 					})}
 				</div>
