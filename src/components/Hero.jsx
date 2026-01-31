@@ -8,7 +8,38 @@ import { useRef } from "react";
 import Generating from "./Generating";
 import Notificiton from "./Notificiton";
 import CompanyLogos from "./CompanyLogos";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 const Hero = () => {
+	useGSAP(() => {
+		gsap.fromTo(
+			"div h1",
+			{ y: 50, opacity: 0 },
+			{ y: 0, opacity: 1, duration: 1, ease: "power2.inOut" }
+		);
+		gsap.fromTo(
+			"div p",
+			{ y: 50, opacity: 0 },
+			{ y: 0, opacity: 1, duration: 1.5, ease: "power2.inOut" }
+		);
+		gsap.fromTo(
+			".inline-flex",
+			{ y: 50, opacity: 0 },
+			{ y: 0, opacity: 1, duration: 3, ease: "power2.inOut" }
+		);
+		gsap.fromTo(
+			"div h1 img",
+			{ x: 50, opacity: 0, rotation: 60 },
+			{
+				x: 0,
+				opacity: 1,
+				rotation: 0,
+				duration: 1,
+				delay: 1,
+				ease: "power2.inOut",
+			}
+		);
+	});
 	const parallaxRef = useRef(null);
 	return (
 		<Section
@@ -102,7 +133,7 @@ const Hero = () => {
 					</div>
 					<BackgroundCircles />
 				</div>
-				<CompanyLogos className="hidden relative z-10 mt-20 lg:block"/>
+				<CompanyLogos className="hidden relative z-10 mt-20 lg:block" />
 			</div>
 			<BottomLine />
 		</Section>
