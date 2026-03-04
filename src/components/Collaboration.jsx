@@ -3,7 +3,33 @@ import { collabApps, collabContent, collabText } from "../constants";
 import { brainwaveSymbol, check } from "../assets";
 import Button from "./Button";
 import { LeftCurve, RightCurve } from "./design/Collaboration";
+import { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 const Collaboration = () => {
+	const collabRef = useRef();
+	useGSAP(
+		() => {
+			gsap.from(".collab", {
+				opacity: 0,
+				scale: 0,
+				scrollTrigger: {
+					trigger: collabRef.current,
+					start: "top 75%",
+					toggleActions: "play none none none",
+				},
+				stagger: {
+					each: 0.2,
+					from: "start",
+				},
+				ease: "power1.inOut",
+				duration: 1,
+			});
+		},
+		{
+			scope: collabRef,
+		}
+	);
 	return (
 		<Section crosses>
 			<div className="container lg:flex">
@@ -59,11 +85,11 @@ const Collaboration = () => {
 								</div>
 							</div>
 						</div>
-						<ul>
+						<ul ref={collabRef}>
 							{collabApps.map((app, index) => (
 								<li
 									key={app.id}
-									className={`absolute top-0 left-1/2 
+									className={`collab absolute top-0 left-1/2 
 										h-1/2 -ml-[1.6rem] origin-bottom
 								`}
 									style={{ transform: `rotate(${index * 45}deg)` }}
